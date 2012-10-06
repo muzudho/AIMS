@@ -2,9 +2,6 @@
 
 --【改変】このファイルは新規に追加。
 
---『鬼畜大王のLuaライブラリー』
---Copyright (c) 2012, 鬼畜大王
---All rights reserved.
 --ファイル作成    ：2012-10-07 鬼畜大王
 --ファイル編集最終：2012-10-07 鬼畜大王
 
@@ -48,7 +45,10 @@
 	以上。
 ]]
 
-function auto_ForwardScene(currentScene)
+
+--外部ファイルと照らし合わせて、シーン移動します。
+--currentScenePartsName:自シーン名の「scene」の後ろに連結されている文字列。空白または「-1」は入れないでください。
+function auto_ForwardScene(currentScenePartsName)
 
 
 	--データベース・テーブル
@@ -59,7 +59,7 @@ function auto_ForwardScene(currentScene)
 	local rowNum = 1
 	for number_Row,record in pairs(t) do
 		if 4<=rowNum then
-			if tonumber(record["SCENE"])==currentScene then
+			if tonumber(record["SCENE"])==currentScenePartsName then
 				hitsRecord = record
 				break
 			end
@@ -69,65 +69,65 @@ function auto_ForwardScene(currentScene)
 	end
 
 	-- ゲームパッドの、十字キー以外のボタンを受け付けます。
-	local nextScene = ""
+	local nextScenePartsName = ""
 	if(isJoyPressed(BUTTON_TRIG1))then
 		-- ゲームパッドのボタン1が今押されている
-		nextScene = hitsRecord["BTN1"];
+		nextScenePartsName = hitsRecord["BTN1"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG2))then
 		-- ゲームパッドのボタン2が今押されている
-		nextScene = hitsRecord["BTN2"];
+		nextScenePartsName = hitsRecord["BTN2"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG3))then
 		-- ゲームパッドのボタン3が今押されている
-		nextScene = hitsRecord["BTN3"];
+		nextScenePartsName = hitsRecord["BTN3"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG4))then
 		-- ゲームパッドのボタン4が今押されている
-		nextScene = hitsRecord["BTN4"];
+		nextScenePartsName = hitsRecord["BTN4"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG5))then
 		-- ゲームパッドのボタン5が今押されている
-		nextScene = hitsRecord["BTN5"];
+		nextScenePartsName = hitsRecord["BTN5"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG6))then
 		-- ゲームパッドのボタン6が今押されている
-		nextScene = hitsRecord["BTN6"];
+		nextScenePartsName = hitsRecord["BTN6"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG7))then
 		-- ゲームパッドのボタン7が今押されている
-		nextScene = hitsRecord["BTN7"];
+		nextScenePartsName = hitsRecord["BTN7"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG8))then
 		-- ゲームパッドのボタン8が今押されている
-		nextScene = hitsRecord["BTN8"];
+		nextScenePartsName = hitsRecord["BTN8"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG9))then
 		-- ゲームパッドのボタン9が今押されている
-		nextScene = hitsRecord["BTN9"];
+		nextScenePartsName = hitsRecord["BTN9"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG10))then
 		-- ゲームパッドのボタン10が今押されている
-		nextScene = hitsRecord["BTN10"];
+		nextScenePartsName = hitsRecord["BTN10"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG11))then
 		-- ゲームパッドのボタン11が今押されている
-		nextScene = hitsRecord["BTN11"];
+		nextScenePartsName = hitsRecord["BTN11"];
 	end
 
 	if(isJoyPressed(BUTTON_TRIG12))then
 		-- ゲームパッドのボタン12が今押されている
-		nextScene = hitsRecord["BTN12"];
+		nextScenePartsName = hitsRecord["BTN12"];
 	end
 
 	--ゲームパッドのボタンの定数は BUTTON_TRIG1～BUTTON_TRIG12 （１２個）までしか存在しない。
@@ -136,9 +136,9 @@ function auto_ForwardScene(currentScene)
 	--CSVから読み取った値は、数字であっても、文字列型になっています。
 
 	--シーン番号は、空白、または「-1」を無視します。
-	if( "" ~= nextScene and "-1" ~= nextScene )then
+	if( "" ~= nextScenePartsName and "-1" ~= nextScenePartsName )then
 		--文字列連結してシーン名を作成します。
-		changeScene("scene" .. nextScene) -- シーン切替。
+		changeScene("scene" .. nextScenePartsName) -- シーン切替。
 	end
 
 end
