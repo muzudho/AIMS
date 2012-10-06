@@ -1,6 +1,9 @@
 ﻿*はじめに(Introduction)
 
-シーン移動を自動化します。
+ライセンスについては、一番上の階層の README.md を見て下さい。
+
+
+*シーン移動を自動化します。
 
 	使い方。
 
@@ -16,24 +19,25 @@
 		（例）
 		NO,SCENE,Expl,BTN1,BTN2,BTN3,BTN4,BTN5,BTN6,BTN7,BTN8,BTN9,BTN10,BTN11,BTN12,END
 		int,int,string,int,int,int,int,int,int,int,int,int,int,int,int,END
-		-1,シーン名。「scene」の後ろに連結される文字列。空白または「-1」を入れると無視されます。,解説,ボタン1を押したときの移動先シーン名。「scene」の後ろに連結される文字列。空白または「-1」を入れると無視されます。,ボタン2,ボタン3,ボタン4,ボタン5,ボタン6,ボタン7,ボタン8,ボタン9,ボタン10,ボタン11,ボタン12,END
-		0,1,,-1,2,3,4,5,6,7,8,9,10,11,12,END
-		1,2,,1,-1,3,4,5,6,7,8,9,10,11,12,END
-		2,3,,1,2,-1,4,5,6,7,8,9,10,11,12,END
-		3,4,,1,2,3,-1,5,6,7,8,9,10,11,12,END
-		4,5,,1,2,3,4,-1,6,7,8,9,10,11,12,END
-		5,6,,1,2,3,4,5,-1,7,8,9,10,11,12,END
-		6,7,,1,2,3,4,5,6,-1,8,9,10,11,12,END
-		7,8,,1,2,3,4,5,6,7,-1,9,10,11,12,END
-		8,9,,1,2,3,4,5,6,7,8,-1,10,11,12,END
-		9,10,,1,2,3,4,5,6,7,8,9,-1,11,12,END
-		10,11,,1,2,3,4,5,6,7,8,9,10,-1,12,END
-		11,12,,1,2,3,4,5,6,7,8,9,10,11,-1,END
+		-1,シーン名。空白または「-1」を入れると無視されます。,解説,ボタン1を押したときの移動先シーン名。空白または「-1」を入れると無視されます。,ボタン2,ボタン3,ボタン4,ボタン5,ボタン6,ボタン7,ボタン8,ボタン9,ボタン10,ボタン11,ボタン12,END
+		-1,,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,,,,,,,,,END
+		0,scene1,,,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
+		1,scene2,,scene1,,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
+		2,scene3,,scene1,scene2,,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
+		3,scene4,,scene1,scene2,scene3,,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
+		4,scene5,,scene1,scene2,scene3,scene4,,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
+		5,scene6,,scene1,scene2,scene3,scene4,scene5,,scene7,scene8,scene9,scene10,scene11,scene12,END
+		6,scene7,,scene1,scene2,scene3,scene4,scene5,scene6,,scene8,scene9,scene10,scene11,scene12,END
+		7,scene8,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,,scene9,scene10,scene11,scene12,END
+		8,scene9,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,,scene10,scene11,scene12,END
+		9,scene10,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,,scene11,scene12,END
+		10,scene11,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,,scene12,END
+		11,scene12,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,,END
 		EOF,,,,,,,,,,,,,,,
 
 	（３）シーンの _OnStep の最後で、次の関数を呼び出します。
 
-		auto_ForwardScene(1);	--引数は自シーン番号。
+		auto_ForwardScene("scene1");	--引数は自シーン名。
 
 	これで、押したボタンに応じて changeScene します。
 	以上。
