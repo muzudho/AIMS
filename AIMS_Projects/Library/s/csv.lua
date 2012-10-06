@@ -1,3 +1,5 @@
+--Sorry, Encoding of this file is Shift-JIS.
+
 -- 【改変】このファイルは新規に追加。「http://lua-users.org/wiki/CsvUtils」
 --「http://symfoware.blog68.fc2.com/blog-entry-455.html」からコードを
 -- 丸ごとコピーして何箇所か改変した。
