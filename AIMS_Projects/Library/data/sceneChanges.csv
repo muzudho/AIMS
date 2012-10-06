@@ -1,0 +1,7 @@
+NO,SCENE,Expl,BTN1,BTN2,BTN3,BTN4,BTN5,BTN6,BTN7,BTN8,BTN9,BTN10,BTN11,BTN12,END
+int,int,string,int,int,int,int,int,int,int,int,int,int,int,int,END
+-1,シーン番号,解説,ボタン1,ボタン2,ボタン3,ボタン4,ボタン5,ボタン6,ボタン7,ボタン8,ボタン9,ボタン10,ボタン11,ボタン12,END
+-1,-1,"Sorry, Encoding of this file is Shift-JIS.（このファイルはShift-JISエンコーディングです。）",,,,,,,,,,,,,END
+-1,-1,このファイルはサンプルです。,,,,,,,,,,,,,END
+0,1,,-1,2,3,4,5,6,7,8,9,10,11,12,END
+EOF,,,,,,,,,,,,,,,
