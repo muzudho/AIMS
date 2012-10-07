@@ -17,27 +17,20 @@
 		data/sceneChanges.csv
 
 		（例）
-		NO,SCENE,Expl,BTN1,BTN2,BTN3,BTN4,BTN5,BTN6,BTN7,BTN8,BTN9,BTN10,BTN11,BTN12,END
-		int,int,string,int,int,int,int,int,int,int,int,int,int,int,int,END
-		-1,シーン名。空白または「-1」を入れると無視されます。,解説,ボタン1を押したときの移動先シーン名。空白または「-1」を入れると無視されます。,ボタン2,ボタン3,ボタン4,ボタン5,ボタン6,ボタン7,ボタン8,ボタン9,ボタン10,ボタン11,ボタン12,END
-		-1,,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,,,,,,,,,END
-		0,scene1,,,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
-		1,scene2,,scene1,,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
-		2,scene3,,scene1,scene2,,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
-		3,scene4,,scene1,scene2,scene3,,scene5,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
-		4,scene5,,scene1,scene2,scene3,scene4,,scene6,scene7,scene8,scene9,scene10,scene11,scene12,END
-		5,scene6,,scene1,scene2,scene3,scene4,scene5,,scene7,scene8,scene9,scene10,scene11,scene12,END
-		6,scene7,,scene1,scene2,scene3,scene4,scene5,scene6,,scene8,scene9,scene10,scene11,scene12,END
-		7,scene8,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,,scene9,scene10,scene11,scene12,END
-		8,scene9,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,,scene10,scene11,scene12,END
-		9,scene10,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,,scene11,scene12,END
-		10,scene11,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,,scene12,END
-		11,scene12,,scene1,scene2,scene3,scene4,scene5,scene6,scene7,scene8,scene9,scene10,scene11,,END
-		EOF,,,,,,,,,,,,,,,
+		NO,ID,Expl,ALWAYS,DISABLED_AT_LOADING,THREAD_NOT_RUNNING,BTN1,BTN1_PARAM,BTN2,BTN2_PARAM,BTN3,BTN3_PARAM,BTN4,BTN4_PARAM,BTN5,BTN5_PARAM,BTN6,BTN6_PARAM,BTN7,BTN7_PARAM,BTN8,BTN8_PARAM,BTN9,BTN_PARAM,BTN10,BTN10_PARAM,BTN11,BTN11_PARAM,BTN12,BTN12_PARAM,END
+		int,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,END
+		-1,auto_ForwardScene(...)が置かれている関数名を入れると便利です。識別できれば何でも構わない。空白または「-1」を入れると無視されます。,解説,この列に設定されていると、必ずこれが選ばれます。,「Yes」…isLoaderRunning=true （データロード中）の場合、ボタン入力によるシーン遷移を無効にします。「No、-1、(空白)」…なにもしません。,isThreadRunning()==false（スレッドが終了している）の場合、ボタンよりも優先的にこれが選ばれます。（空白、または-1以外が設定されている場合）,ボタン1を押したときの移動先シーン名。空白または「-1」を入れると無視されます。,「Push」…一度ボタンを離してから押さないと反応しません。「(空白)または-1」…押していれば反応します。,ボタン2,ボタン2,ボタン3,ボタン3,ボタン4,ボタン4,ボタン5,ボタン5,ボタン6,ボタン6,ボタン7,ボタン7,ボタン8,ボタン8,ボタン9,ボタン9,ボタン10,ボタン10,ボタン11,ボタン11,ボタン12,ボタン12,END
+		-1,,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,,,,,,,,,,,,,,,,,,,,,,,,END
+		0,boot_OnStart,,logo,,,,,,,,,,,,,,,,,,,,,,,,,,,END
+		1,logo_OnStep(DONT_USE),CSVファイルが読込み完了していないことがあるので、このレコードは使えない。,,Yes,title,title,,,,,,,,,,,,,,,,,,,,,,,,END
+		2,title_OnStep,,,,,game,Push,,,,,,,,,,,,,,,,,,,,,,,END
+		3,thread_gameover,,gameover,,,,,,,,,,,,,,,,,,,,,,,,,,,END
+		4,gameover_OnStep,,,,,title,,,,,,,,,,,,,,,,,,,,,,,,END
+		EOF,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-	（３）シーンの _OnStep の最後で、次の関数を呼び出します。
+	（３）シーンを切り替えたいタイミングで、次の関数を呼び出します。
 
-		auto_ForwardScene("scene1");	--引数は自シーン名。
+		auto_ForwardScene("scene1_OnStep");	--引数は、これを呼び出している関数の名前を入れると便利。
 
 	これで、押したボタンに応じて changeScene します。
 	以上。
