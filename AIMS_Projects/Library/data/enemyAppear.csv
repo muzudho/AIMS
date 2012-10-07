@@ -1,0 +1,27 @@
+NO,ID,Expl,REPEAT_CONTROL,REPEAT_LABEL,REPEAT_TIME,MOD_LEVEL,PROGRAM,WAIT,INTERVAL_BASE,INTERVAL_MAXHANDYCAP,NAME_FUNC,LIFE,X_MIN,X_MAX,Y_MIN,Y_MAX,SCORE_BASE,END
+int,string,string,string,string,int,int,string,int,int,int,string,int,string,string,string,string,string,END
+-1,識別子,コメント,繰り返しの制御,繰り返しの名前,繰り返し回数。空白または-1は無限。,レベル5毎に出るなら「5」,「Boss」ならボス登場。,frame数,間隔frame（INTERVAL_BASEとINTERVAL_LIMITは両方設定すると有効）,間隔frame,関数（シーン）名,ライフ,出現位置x最左（ゲーム領域360px中、左辺を0とする）,出現位置x最右（ゲーム領域360px中、左辺を0とする）,出現位置y最上,出現位置y最下,スコア基礎点,END
+-1,,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,,,,,,,,,,,,END
+-1,,このファイルはサンプルです。,,,,,,,,,,,,,,,,END
+-1,,NO列は、1からの連番を途切れないようにしてください。,,,,,,,,,,,,,,,,END
+0,,NOが0の行は欠番。,,,,,,,,,,,,,,,,END
+1,,通常ザコ3セット（1セット4匹）,Begin,zako1,3,,,,,,,,,,,,,END
+2,,上から2匹。,,,,,,,,,zako,1,0,360,32,,SCOREBASE_ZAKO,END
+3,,,,,,,,,,,zako,1,0,360,32,,SCOREBASE_ZAKO,END
+4,,間隔,,,,,,,80,70,,,,,,,,END
+5,,左から,,,,,,,,,zako,1,0,,0,450,SCOREBASE_ZAKO,END
+6,,右から,,,,,,,,,zako,1,360,,0,450,SCOREBASE_ZAKO,END
+7,,間隔,,,,,,,80,70,,,,,,,,END
+8,,,End,zako1,,,,,,,,,,,,,,END
+9,,自機追尾は横から2匹沸く。2セット。,Begin,zako_homing1,2,,,,,,,,,,,,,END
+10,,左から,,,,,,,,,zako_homing,1,0,,0,360,SCOREBASE_ZAKOHOMING,END
+11,,,,,,,,,80,75,,,,,,,,END
+12,,右から,,,,,,,,,zako_homing,1,360,,0,360,SCOREBASE_ZAKOHOMING,END
+13,,,,,,,,,80,75,,,,,,,,END
+14,,,End,zako_homing1,,,,,,,,,,,,,,END
+15,,上からレーザー1匹。3セット。,Begin,zako_laser1,3,,,,,,,,,,,,,END
+16,,,,,,,,,,,zako_laser,40,0,360,32,,SCOREBASE_LAZER,END
+17,,間隔,,,,,,,120,115,,,,,,,,END
+18,,,End,zako_laser1,,,,,,,,,,,,,,END
+19,,Lv5毎にボス出現,,,,5,Boss,,,,boss,800,180,,1,,SCOREBASE_BOSS,END
+EOF,,,,,,,,,,,,,,,,,,
