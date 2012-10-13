@@ -9,6 +9,7 @@ Web site: http://xenon.wiki.fc2.com/
 *鬼畜大王が『鬼畜大王のLuaライブラリー』として丸ごと新しく書き起こして公開しているソースコードのライセンスは、修正ＢＳＤライセンスとします。
 
 	『鬼畜大王のLuaライブラリー』
+	『鬼畜大王のAIMS/Luaライブラリー』
 	Copyright (c) 2012, 鬼畜大王
 	All rights reserved.
 
