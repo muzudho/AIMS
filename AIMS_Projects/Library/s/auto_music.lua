@@ -21,13 +21,15 @@
 		data/auto_music.csv
 
 		（例）
-		NO,ID,INTRO,LOOP,NO_REPEAT,END
-		int,string,string,string,string,END
-		-1,識別子,イントロ部分（または丸ごと）のファイル名,ループ部分のファイル名（あれば）,「Yes」…ループしない。「（空白）」…ループする。,END
-		0,,,,,END
-		1,game_OnStart,mus/stage_lp.ogg,,,END
-		2,title_OnStart,mus/title_in.ogg,mus/title_lp.ogg,,END
-		EOF,,,,,
+		NO,ID,INTRO,LOOP,NO_REPEAT,FADEOUT,WAIT_WITH_FADEOUT,END,,,,,,,,,,,,,,,,,,,,,,,
+		int,string,string,string,string,int,int,END,,,,,,,,,,,,,,,,,,,,,,,
+		-1,auto_MusicAt(...)が置かれている関数名を入れると便利です。識別できれば何でも構わない。空白または「-1」を入れると無視されます。,イントロ部分（または丸ごと）のファイル名。「（空白）」または「-1」で無視。,ループ部分のファイル名（あれば）,「Yes」…ループしない。「（空白）」…ループする。,フェードアウトにかけるミリ秒。「（空白）」または「-1」で無視。,フェードアウト時間を指定した場合、同時にゲームをwaitするミリ秒を指定できます。「（空白）」または「-1」で無視。,END,,,,,,,,,,,,,,,,,,,,,,,
+		-1,,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,END,,,,,,,,,,,,,,,,,,,,,,,END
+		0,,このファイルはサンプルです。,,,,,END,,,,,,,,,,,,,,,,,,,,,,,
+		1,game_OnStart,mus/stage_lp.ogg,,,,,END,,,,,,,,,,,,,,,,,,,,,,,
+		2,title_OnStart,mus/title_in.ogg,mus/title_lp.ogg,,,,END,,,,,,,,,,,,,,,,,,,,,,,
+		3,thread_gameover,,,,180,180,END,,,,,,,,,,,,,,,,,,,,,,,
+		EOF,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 	（３）音楽を切り替えたいタイミングで、次の関数を呼び出します。
 
