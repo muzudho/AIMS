@@ -7,14 +7,14 @@
 *配布！
 
 - 『suica32』の敵の出現パターンを外部ファイルに出し、スプレッドシートで編集できるようにするライブラリー。
-s/auto_sceneChanges.lua
-s/csv.lua
-data/auto_sceneChanges.csv
+ s/auto_sceneChanges.lua
+ s/csv.lua
+ data/auto_sceneChanges.csv
 
 - 『suica32』の音楽再生を外部ファイルに出し、スプレッドシートで編集できるようにするライブラリー。
-s/auto_music.lua
-s/csv.lua
-data/auto_music.csv
+ s/auto_music.lua
+ s/csv.lua
+ data/auto_music.csv
 
 
 
