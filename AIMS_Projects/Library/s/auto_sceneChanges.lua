@@ -47,7 +47,7 @@ function auto_SceneAt(id)
 
 
 	--データベース・テーブル
-	local t = csv_FromFile("data/sceneChanges.csv")
+	local t = csv_FromFile("data/auto_sceneChanges.csv")
 
 	--レコード
 	local hitsRecord
