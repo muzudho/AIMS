@@ -12,10 +12,14 @@
 * data/auto_sceneChanges.csv
 
 - 『suica32』の音楽再生を外部ファイルに出し、スプレッドシートで編集できるようにするライブラリー。
-* s/auto_music.lua
-* s/csv.lua
-* data/auto_music.csv
+    s/auto_music.lua
+    s/csv.lua
+    data/auto_music.csv
 
+- 『suica32』の画像読込み、コマ切抜きを外部ファイルに出し、スプレッドシートで編集できるようにするライブラリー。
+    s/auto_image.lua
+    s/csv.lua
+    data/auto_image.csv
 
 
 
