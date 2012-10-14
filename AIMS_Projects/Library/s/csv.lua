@@ -5,7 +5,7 @@
 -- 丸ごとコピーして何箇所か改変した。
 
 -- ファイル作成    ：2012-09-16 鬼畜大王
--- ファイル編集最終：2012-10-14 鬼畜大王:コメント追加
+-- ファイル編集最終：2012-10-15 鬼畜大王:コメント追加
 
 
 --[[
@@ -269,6 +269,35 @@ function csv_FromFile (filename)
 
 	return t
 end
+
+
+--------------------------------------------------------------------------------
+-- 検索
+--------------------------------------------------------------------------------
+
+--
+--csvTable: CSVテーブル
+--name_FieldKey: キー・フィールド名
+--expected_ValueKey: キー値
+function csv_SelectRecord( csvTable, name_FieldKey, expected_ValueKey )
+
+	local hitsRecord
+	local rowNum=1
+	for number_Row,record in pairs(csvTable) do
+		if 4<=rowNum then
+			--文字列型として比較します。
+			if record[name_FieldKey]==tostring(expected_ValueKey) then
+				hitsRecord = record
+				break
+			end
+		end
+		
+		rowNum = rowNum + 1
+	end
+
+	return hitsRecord
+end
+
 
 
 -- 【/改変】このファイルは新規に追加。「http://lua-users.org/wiki/CsvUtils」
