@@ -5,7 +5,7 @@
 -- 丸ごとコピーして何箇所か改変した。
 
 -- ファイル作成    ：2012-09-16 鬼畜大王
--- ファイル編集最終：2012-10-07 鬼畜大王
+-- ファイル編集最終：2012-10-14 鬼畜大王:コメント追加
 
 
 --[[
@@ -74,12 +74,15 @@
 ]]
 
 
+-- split関数
+--
 --http://symfoware.blog68.fc2.com/blog-entry-455.html
 --サンプルコードをいただきました。
 --Lua用のsplitが標準に無かったとのことで http://lua-users.org/wiki/SplitJoin を
 --参考に自作した関数を忘れないように書いたメモとのことです。
 --ブログのコメント欄にて利用・再配布の主旨を伝えまして、許可をいただきました。
--- split関数
+--
+--特殊：「.」でスプリットしたい場合は「[.]」と書く。（正規表現を使っているので）
 function csv_Split(str, delim)
     -- Eliminate bad cases...
     if string.find(str, delim) == nil then
