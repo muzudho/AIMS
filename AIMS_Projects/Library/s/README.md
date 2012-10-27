@@ -1,10 +1,16 @@
 ﻿How_to_use(auto_sceneChanges_lua).txt …「自動シーン切替」の使い方が書いてあります。
 
+auto_image.lua …「画像のコマ切抜き、当たり判定設定」
 
-*はじめに(Introduction)
+auto_keyconfig.lua …「キーコンフィグ」
 
-ライブラリーのライセンスについては、一番上の階層の README.md を見て下さい。
-ライブラリーの使い方は、それぞれのファイル内に書かれてあります。
+auto_music.lua …「ＢＧＭの一元管理」
+
+auto_sceneChanges.lua …「シーン切替の一元管理」
+
+ライブラリーのライセンスについては、一番上の階層の README.md を見て下さい。ライブラリーの使い方は、それぞれのファイル内か、または How_to_use(～).txt に書かれてあります。
+
+
 
 
 *配布！
