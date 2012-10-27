@@ -1,5 +1,7 @@
 ﻿How_to_use(auto_sceneChanges_lua).txt …「自動シーン切替」の使い方が書いてあります。
 
+How_to_use(auto_keyconfig_lua).txt …「キーコンフィグ」の使い方が書いてあります。
+
 auto_image.lua …「画像のコマ切抜き、当たり判定設定」
 
 auto_keyconfig.lua …「キーコンフィグ」
