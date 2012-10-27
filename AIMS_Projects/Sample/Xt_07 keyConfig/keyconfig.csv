@@ -1,0 +1,6 @@
+NO,Expl,PLAYER,A,B,X,Y,L,R,S,P,END
+int,string,int,int,int,int,int,int,int,int,int,END
+-1,解説,プレイヤー番号1～,Aボタン番号,Bボタン番号,Xボタン番号,Yボタン番号,Lボタン番号,Rボタン番号,Selectボタン番号,Pauseボタン番号,END
+-1,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,,,,,,END
+0,"1プレイヤー",1,0,1,2,3,4,5,6,7,END
+EOF
