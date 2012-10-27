@@ -1,4 +1,7 @@
-﻿*はじめに(Introduction)
+﻿How_to_use(auto_sceneChanges_lua).txt …「自動シーン切替」の使い方が書いてあります。
+
+
+*はじめに(Introduction)
 
 ライブラリーのライセンスについては、一番上の階層の README.md を見て下さい。
 ライブラリーの使い方は、それぞれのファイル内に書かれてあります。
