@@ -6,19 +6,31 @@
 --Copyright (c) 2012, 鬼畜大王
 --All rights reserved.
 --ファイル作成    ：2012-10-07 鬼畜大王
---ファイル編集最終：2012-10-14 鬼畜大王
+--ファイル編集最終：2012-10-27 鬼畜大王
 
 --[[
 	使い方。
 
-	（１）Luaファイルを読み込んでおきます。
+	（１）次の３つのファイルを、GitHub から手に入れます。
+		・～/s/csv.lua
+		・～/s/auto_sceneChanges.lua （このファイル）
+		・～/data/auto_sceneChanges.csv （サンプルとして持っていく）
+
+	（２）boot.luaファイルの中に、prequire文を追加します。
+		-------------------------------------------
+		-- common呼び出し
+		-------------------------------------------
+		prequire("common.lua");
+		--【追加】ここから--
 		prequire("s/csv.lua");
 		prequire("s/auto_sceneChanges.lua");
-		--その他、シーンファイル。
+		--その他、追加したいシーンの.luaファイルを読込み。
+		--【/追加】ここまで--
 
-	（２）シーン遷移CSVを作成します。
+	（３）シーン遷移を設定したCSVを作成します。
+		  サンプルを持っていって改造してください。
 
-		data/auto_sceneChanges.csv
+		～/data/auto_sceneChanges.csv
 
 		（例）
 		NO,ID,Expl,ALWAYS,DISABLED_AT_LOADING,THREAD_NOT_RUNNING,BTN1,BTN1_PARAM,BTN2,BTN2_PARAM,BTN3,BTN3_PARAM,BTN4,BTN4_PARAM,BTN5,BTN5_PARAM,BTN6,BTN6_PARAM,BTN7,BTN7_PARAM,BTN8,BTN8_PARAM,BTN9,BTN_PARAM,BTN10,BTN10_PARAM,BTN11,BTN11_PARAM,BTN12,BTN12_PARAM,END
@@ -32,7 +44,7 @@
 		4,gameover_OnStep,,,,,title,,,,,,,,,,,,,,,,,,,,,,,,END
 		EOF,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
-	（３）シーンを切り替えたいタイミングで、次の関数を呼び出します。
+	（４）シーンを切り替えたいタイミングで、次の関数を呼び出してください。
 
 		auto_SceneAt("scene1_OnStep");	--引数は、これを呼び出している関数の名前を入れると便利。
 
