@@ -4,8 +4,11 @@
 --「http://symfoware.blog68.fc2.com/blog-entry-455.html」からコードを
 -- 丸ごとコピーして何箇所か改変した。
 
+--『鬼畜大王のAIMS/Luaライブラリー』
+--Copyright (c) 2012, 鬼畜大王
+--All rights reserved.
 -- ファイル作成    ：2012-09-16 鬼畜大王
--- ファイル編集最終：2012-10-15 鬼畜大王:コメント追加
+-- ファイル編集最終：2012-10-28 鬼畜大王:コメント追加
 
 
 --[[
@@ -220,15 +223,10 @@ function csv_CreateTable(csvRows)
 
 	--先頭行はフィールド名。
 	local fieldnames = csv_FromLine( csvRows[1] )
---	debugOut("★fieldnames=[".. fieldnames .."]")
---	for key,value in pairs(fieldnames) do
---		debugOut("fieldnames=[".. key .."][" .. value .. "]")
---	end
 
 	for key,value in pairs(csvRows) do
 		t[rowNum] = csv_FromDataline(fieldnames, value)
 		rowNum = rowNum + 1
-		--debugOut("[".. key .."]=[".. value .. "]  テーブルのサイズ=[".. #t .. "]行")
 	end
 
 	return t
@@ -241,14 +239,14 @@ function csv_FromText (s)
 	local t = {}
 	local csvRows = csv_Split(s,"\n")
 
-	t = csv_CreateTable(csvRows);
+	t = csv_CreateTable(csvRows)
 
-	return t;
+	return t
 end
 
 
 --自作
-function csv_FromFile (filename)
+function csv_FromFile ( filename )
 
 	local t = {}
 	local csvRows = {}
@@ -256,16 +254,20 @@ function csv_FromFile (filename)
 	
 	--CSVファイルを開きます。
 	f = io.open(filename, "r")
-	--一行ずつテキストファイルを読み込みます。
-	for line in f:lines() do
---		debugOut("ファイル読取line=[".. line .. "]")
-	    csvRows[rowNum] = line
-		rowNum = rowNum + 1
-	end
-	--使い終わったらファイルを閉じます。
-	f:close()
 
-	t = csv_CreateTable(csvRows);
+	if( nil~=f )then
+		--一行ずつテキストファイルを読み込みます。
+		for line in f:lines() do
+		    csvRows[rowNum] = line
+			rowNum = rowNum + 1
+		end
+		--使い終わったらファイルを閉じます。
+		f:close()
+		
+		t = csv_CreateTable(csvRows)
+	else
+		debugOut( "指定のファイルはありませんでした。[".. filename .."]" )
+	end
 
 	return t
 end
