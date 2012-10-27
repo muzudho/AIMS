@@ -7,7 +7,9 @@
 --All rights reserved.
 --ファイル作成    ：2012-10-07 鬼畜大王
 --ファイル編集最終：2012-10-27 鬼畜大王
---使い方は、GitHubの同フォルダー内にある How_to_use(auto_sceneChanges_lua).txt を読んでください。
+--
+--使い方、およびトラブルシューティングは、GitHubの同フォルダー内にある
+--How_to_use(auto_sceneChanges_lua).txt を読んでください。
 
 
 --外部ファイルと照らし合わせて、シーン移動します。
