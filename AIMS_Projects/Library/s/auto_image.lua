@@ -6,7 +6,7 @@
 --Copyright (c) 2012, 鬼畜大王
 --All rights reserved.
 --ファイル作成    ：2012-10-14 鬼畜大王
---ファイル編集最終：2012-10-15 鬼畜大王
+--ファイル編集最終：2012-10-27 鬼畜大王
 
 --[[
 	使い方。
@@ -21,9 +21,9 @@
 		data/auto_image.csv
 
 		（例）
-		NO,ID,Expl,LOAD_TO_SOURCE,R_TRANSPARENT,G_TRANSPARENT,B_TRANSPARENT,HANDLE_CHIP_SOURCE,HANDLE_CHIP_DESTINATION,STARTINDEX_CHIP_DESTINATION,LEFT_CELL,TOP_CELL,WIDTH_CELL,HEIGHT_CELL,COLUMNS,ROWS,DELAY_ANIME,LOOPPOINT_ANIME,X_SETCENTER,Y_SETCENTER,R_FILL,G_FILL,B_FILL,A_FILL,LEFT_HIT,TOP_HIT,WIDTH_HIT,HEIGHT_HIT,END
-		int,string,string,string,int,int,int,string,string,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,END
-		-1,auto_ImageAt(...)の引数に渡されます。識別できれば何でも構わない。空白または「-1」を入れると無視されます。「Img:」「;」で挟んでおくと全文文字列置換しやすい。同じIDが連続している場合、続けて実行される。,コメント,（生成時）画像ファイルパス。HANDLE_CHIP_SOURCEで指定した変数に画像ハンドルが入れられる。LOAD_TO_SOURCEの指定がないときは、HANDLE_CHIP_SOURCEは既にセットされているものとして利用される。,（生成時）ロード時に透明にする色をＲＧＢ0～255で指定できる。「（空欄）」または「-1」で無視。,（生成時）,（生成時）,（生成時・編集時）画像ハンドルの名前。（この画像から切り抜く）。「G.」で始まること。例：「G.bullets.base」と記述。,（生成時）切り抜かれた画像のハンドルが入る変数名。 「G.」で始まること。例：「G.efx.blast」と記述。,（生成時）HANDLE_CHIP_DESTINATIONで指定した変数がテーブルだった時は、その開始インデックス。,切り抜き部分の左辺x。,切り抜き部分の上辺y。,切り抜き部分の横幅。,切り抜き部分の縦幅。,切り抜くコマが右に連続する列数。「（空欄）」または「-1」なら1。,切り抜くコマが下に連続する行数。「（空欄）」または「-1」なら1。,アニメーションさせる場合、１コマのwait間隔。ミリ秒。「（空欄）」または「-1」ならアニメーションしない。,終端の次は何コマ目に戻るか。先頭を1。「（空欄）」または「-1」ならループしない。,回転、拡縮の中心点を設定。左上を原点とする座標。「（空欄）」または「-1」で無視。全ての切り抜き画像に適応する。,,全領域をＲＧＢＡ0～255で塗りつぶします。RGBAの４つとも指定すると有効です。１つでも「（空欄）」または「-1」だと無視されます。画像ロードのときに有効です。,,,,当たり判定を設定します。４つ設定していると有効です。「（空欄）」または「-1」を指定すると無視。,,,,END
+		NO,ID,Expl,LOAD_TO_SOURCE,R_TRANSPARENT,G_TRANSPARENT,B_TRANSPARENT,HANDLE_CHIP_SOURCE,HANDLE_CHIP_DESTINATION,STARTINDEX_CHIP_DESTINATION,ENDINDEX_CHIP_DESTINATION,EXCEPTINDEX_CHIP_DESTINATION,LEFT_CELL,TOP_CELL,WIDTH_CELL,HEIGHT_CELL,COLUMNS,ROWS,DELAY_ANIME,LOOPPOINT_ANIME,X_SETCENTER,Y_SETCENTER,R_FILL,G_FILL,B_FILL,A_FILL,LEFT_HIT,TOP_HIT,WIDTH_HIT,HEIGHT_HIT,END
+		int,string,string,string,int,int,int,string,string,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,int,END
+		-1,auto_ImageAt(...)の引数に渡されます。識別できれば何でも構わない。空白または「-1」を入れると無視されます。「Img:」「;」で挟んでおくと全文文字列置換しやすい。同じIDが連続している場合、続けて実行される。,コメント,（生成時）画像ファイルパス。HANDLE_CHIP_SOURCEで指定した変数に画像ハンドルが入れられる。LOAD_TO_SOURCEの指定がないときは、HANDLE_CHIP_SOURCEは既にセットされているものとして利用される。,（生成時）ロード時に透明にする色をＲＧＢ0～255で指定できる。「（空欄）」または「-1」で無視。,（生成時）,（生成時）,（生成時・編集時）画像ハンドルの名前。（この画像から切り抜く）。「G.」で始まること。例：「G.bullets.base」と記述。,（生成時）切り抜かれた画像のハンドルが入る変数名。 「G.」で始まること。例：「G.efx.blast」と記述。,（生成時）HANDLE_CHIP_DESTINATIONで指定した変数がテーブルだった時は、その開始インデックス。,,（生成時）テーブル状に並んでいるとき、このindexに当たるセルは読み飛ばします。「|」区切りで複数個指定できます。例：「227|999」。,切り抜き部分の左辺x。,切り抜き部分の上辺y。,切り抜き部分の横幅。,切り抜き部分の縦幅。,切り抜くコマが右に連続する列数。「（空欄）」または「-1」なら1。,切り抜くコマが下に連続する行数。「（空欄）」または「-1」なら1。,アニメーションさせる場合、１コマのwait間隔。ミリ秒。「（空欄）」または「-1」ならアニメーションしない。,終端の次は何コマ目に戻るか。先頭を1。「（空欄）」または「-1」ならループしない。,回転、拡縮の中心点を設定。左上を原点とする座標。「（空欄）」または「-1」で無視。全ての切り抜き画像に適応する。,,全領域をＲＧＢＡ0～255で塗りつぶします。RGBAの４つとも指定すると有効です。１つでも「（空欄）」または「-1」だと無視されます。画像ロードのときに有効です。,,,,当たり判定を設定します。４つ設定していると有効です。「（空欄）」または「-1」を指定すると無視。,,,,END
 
 		～データ部分は大きいので紹介を割愛します。
 
@@ -251,6 +251,20 @@ function auto_ImageAt( id )
 						fieldStartindexchipdestination = tonumber( fieldStartindexchipdestination )
 					end
 
+					local fieldEndindexchipdestination
+					fieldEndindexchipdestination = hitsRecord["ENDINDEX_CHIP_DESTINATION"];
+					if(""==fieldEndindexchipdestination)then
+						--空白は -1 扱い（入力を無かったことに）。
+						fieldEndindexchipdestination = -1
+					else
+						fieldEndindexchipdestination = tonumber( fieldEndindexchipdestination )
+					end
+
+					--カンマ区切りで複数個の数字を指定できます。配列として利用。
+					local fieldExceptindexchipdestination
+					fieldExceptindexchipdestination = hitsRecord["EXCEPTINDEX_CHIP_DESTINATION"];
+					fieldExceptindexchipdestination = csv_Split( fieldExceptindexchipdestination, "[|]")
+
 					--読込み済み local fieldHandlechipsource
 
 					--読込み済み local fieldWidthcell
@@ -392,37 +406,73 @@ function auto_ImageAt( id )
 							""==fieldWidthcell or
 							""==fieldHeightcell
 						)then
-							--記入に不備があれば、無視します。
+							--「左端x」「上端y」「横幅」「縦幅」のいずれかでも記入されていなければ。
+							--「開始index」が指定されているかもしれません。「終了index」は任意。
+
+							local start, last
+							if( -1 ~= fieldStartindexchipdestination )then
+								start = fieldStartindexchipdestination;
+
+								if( -1 ~= fieldEndindexchipdestination )then
+									last = fieldEndindexchipdestination
+								else
+									last = fieldRows * fieldColumns - 1 + fieldStartindexchipdestination
+								end
+
+								for current=start,last,1 do
+								
+									if( auto_TableContains( fieldExceptindexchipdestination, tostring( current) ))then
+										--このindexは処理を飛ばします。
+									else
+										handleImagecrop = tableTarget[ current ];
+									
+										if(-1~=fieldLefthit and -1~=fieldTophit and -1~=fieldWidthhit and -1~=fieldHeighthit)then
+											--当たり判定「左端x」「上端y」「横幅」「縦幅」が全て指定されていれば。
+											--当たり判定追加。
+											addGraphicHit( handleImagecrop, fieldLefthit, fieldTophit, fieldWidthhit, fieldHeighthit )
+										end
+									end
+								end
+							end
+							
 						else
 							local numberWidth, numberHeight, numberColumns
 							numberWidth  = tonumber(fieldWidthcell)
 							numberHeight = tonumber(fieldHeightcell)
 							numberColumns = fieldColumns
 							numberRows = fieldRows
-
+							
 							local last
-							last = numberColumns * numberRows
+							last = numberColumns * numberRows - 1
 
 							local index
 							index = indexStart
-							for current=1,last,1 do
-								handleImagecrop = cutGraphic(
-									handleImage,
-									numberWidth *math.mod  ( current-1               ,numberColumns)+fieldLeftcell,
-									numberHeight*math.floor((current-1)/numberColumns              )+fieldTopcell,
-									numberWidth,
-									numberHeight
-									);
-								
-								if(-1~=fieldXsetcenter and -1~=fieldYsetcenter)then
-									setGraphicCenter( handleImagecrop, fieldXsetcenter, fieldYsetcenter );
-								end
+							for current=0,last,1 do
+							
+								if( auto_TableContains( fieldExceptindexchipdestination, tostring( current) ))then
+									--このindexは処理を飛ばします。
+								else
+									
+									handleImagecrop = cutGraphic(
+										handleImage,
+										numberWidth *math.mod  ( current               ,numberColumns)+fieldLeftcell,
+										numberHeight*math.floor( current /numberColumns              )+fieldTopcell,
+										numberWidth,
+										numberHeight
+										);
+									
+									if(-1~=fieldXsetcenter and -1~=fieldYsetcenter)then
+										setGraphicCenter( handleImagecrop, fieldXsetcenter, fieldYsetcenter );
+									end
 
-								if(-1~=fieldLefthit and -1~=fieldTophit and -1~=fieldWidthhit and -1~=fieldHeighthit)then
-									setGraphicHit( handleImagecrop, fieldLefthit, fieldTophit, fieldWidthhit, fieldHeighthit )
+									if(-1~=fieldLefthit and -1~=fieldTophit and -1~=fieldWidthhit and -1~=fieldHeighthit)then
+										--当たり判定「左端x」「上端y」「横幅」「縦幅」が全て指定されていれば。
+										setGraphicHit( handleImagecrop, fieldLefthit, fieldTophit, fieldWidthhit, fieldHeighthit )
+									end
+									
+									tableTarget[index] = handleImagecrop
 								end
-								
-								tableTarget[index] = handleImagecrop
+							
 								index = index + 1
 							end
 							
@@ -570,6 +620,20 @@ function auto_GlobalTableSet( fieldNamenewtable, valueNew )
 	else
 		--名無しが指定されたので無視。
 	end
+end
+
+--配列の中に、指定の要素が含まれるか否か判定します。
+function auto_TableContains( table, valueExpected )
+  local result = false
+  
+  for key, value in pairs(table) do
+    if value == valueExpected then
+      result = true
+      break
+    end
+  end
+
+  return result
 end
 
 --【/改変】このファイルは新規に追加。
