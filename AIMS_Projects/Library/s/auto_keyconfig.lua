@@ -26,15 +26,58 @@
 	
 	（３）AIMSd.lua（アプリケーション名.lua）ファイルの、下記の箇所を変更します。
 	
-		-- プレイヤー人数　有効デバイス数に直結します。
-		MAXIMUM_PLAYERS = 1;
-		MAXIMUM_TRIGGERS = 8; -- 【改変/】2→8
-		USE_MOUSE = 0;
-	
+			-- プレイヤー人数　有効デバイス数に直結します。
+			MAXIMUM_PLAYERS = 1;
+			MAXIMUM_TRIGGERS = 8; -- 【改変/】2→8
+			USE_MOUSE = 0;
+
+			-- 1p ゲームパッド
+			BIND_PAD_1P_TRIG1 = 0;
+			BIND_PAD_1P_TRIG2 = 1;
+			-- 【改変】追加した。ここから。
+			BIND_PAD_1P_TRIG3 = 2; --X
+			BIND_PAD_1P_TRIG4 = 3; --Y
+			BIND_PAD_1P_TRIG5 = 4; --L
+			BIND_PAD_1P_TRIG6 = 5; --R
+			BIND_PAD_1P_TRIG7 = 6; --S
+			BIND_PAD_1P_TRIG8 = 7; --P
+			setJoyBind(0,BUTTON_TRIG3,BIND_PAD_1P_TRIG3);
+			setJoyBind(0,BUTTON_TRIG4,BIND_PAD_1P_TRIG4);
+			setJoyBind(0,BUTTON_TRIG5,BIND_PAD_1P_TRIG5);
+			setJoyBind(0,BUTTON_TRIG6,BIND_PAD_1P_TRIG6);
+			setJoyBind(0,BUTTON_TRIG7,BIND_PAD_1P_TRIG7);
+			setJoyBind(0,BUTTON_TRIG8,BIND_PAD_1P_TRIG8);
+			-- 【/改変】追加した。ここまで。
+
 		これで、有効なボタンの数が 8個になるので、A,B,X,Y,L,R,S,P まで
 		対応できます。
+		ここでの変更は user.cfg にキャッシュされているのかもしれません。
+		AIMSd.luaの内容を変更したのにゲームに影響しない場合は、
+		user.cfg ファイルを消してみてください。
 	
-	（４）boot.luaファイルの中に、prequire文を追加します。
+	（４）common.lua ファイルの、下記の箇所（ほぼ一番下）を変更します。
+	
+			-- 押されたボタンのIDに対応した文字列を返す。
+			_TRIG = {
+					{ BUTTON_UP,	"up"	};
+					{ BUTTON_DOWN,	"down"	};
+					{ BUTTON_LEFT,	"left"	};
+					{ BUTTON_RIGHT,	"right"	};
+					{ BUTTON_TRIG1,	"trig1"	};
+					{ BUTTON_TRIG2,	"trig2"	};
+					{ BUTTON_TRIG3,	"trig3"	};
+			-- 【改変】追加。ここから。
+					{ BUTTON_TRIG4,	"trig4"	}; --Y
+					{ BUTTON_TRIG5,	"trig5"	}; --L
+					{ BUTTON_TRIG6,	"trig6"	}; --R
+					{ BUTTON_TRIG7,	"trig7"	}; --S
+					{ BUTTON_TRIG8,	"trig8"	}; --P
+			-- 【/改変】追加。ここまで。
+			}
+
+		何に使うのか分かりませんが、変更しておくと無難でしょう。
+	
+	（５）boot.luaファイルの中に、prequire文を追加します。
 		-------------------------------------------
 		-- common呼び出し
 		-------------------------------------------
@@ -44,7 +87,7 @@
 		prequire("s/auto_keyconfig.lua");
 		--【/追加】ここまで--
 	
-	（５）キーコンフィグを設定したCSVを作成します。
+	（６）キーコンフィグを設定したCSVを作成します。
 		  サンプルを持っていって改造するか、
 		  キーコンフィグ画面を使って作成してください。
 
@@ -57,7 +100,7 @@
 		0,"1プレイヤー",1,0,1,2,3,4,5,6,7,END
 		EOF
 
-	（６）キーコンフィグを反映させたいタイミングで、次の関数を呼び出してください。
+	（７）キーコンフィグを反映させたいタイミングで、次の関数を呼び出してください。
 
 		auto_KeyconfigRead()
 
@@ -68,8 +111,10 @@
 
 	[トラブルシューティング]
 
-		・キーコンフィグが効かなくなったときは、user.cfg を削除すると
-			直ることがありました。
+		・キーコンフィグが効かなくなったり、
+		  AIMSd.lua（アプリケーション名.lua）ファイルを更新しても直らなかったときは、
+		  user.cfg を削除すると直ることがありました。
+		  user.cfgファイルは、AIMSd.luaのキャッシュかもしれません。
 
 		以上。
 ]]
