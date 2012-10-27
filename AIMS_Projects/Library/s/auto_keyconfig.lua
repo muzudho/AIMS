@@ -10,7 +10,7 @@
 
 
 --[[
-	使い方。
+	[使い方]
 
 	（１）２つの用途があります。
 		用途１：「読み」。keyconfig.csvを読み込んで、ボタン定数を上書変更する。
@@ -64,6 +64,13 @@
 		例えば、boot.lua の中の boot_OnStart で呼び出します。
 
 		これで、キーコンフィグが反映されます。
+
+
+	[トラブルシューティング]
+
+		・キーコンフィグが効かなくなったときは、user.cfg を削除すると
+			直ることがありました。
+
 		以上。
 ]]
 
@@ -217,56 +224,56 @@ function auto_KeyconfigRead()
 		physicalButton = tonumber( hitsRecord["A"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG1, physicalButton );
-			debugOut( "Aボタン(".. BUTTON_TRIG1 ..") = [".. physicalButton .."]" )
+			--debugOut( "Aボタン(".. BUTTON_TRIG1 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン2をBボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["B"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG2, physicalButton );
-			debugOut( "Bボタン(".. BUTTON_TRIG2 ..") = [".. physicalButton .."]" )
+			--debugOut( "Bボタン(".. BUTTON_TRIG2 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン3をXボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["X"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG3, physicalButton );
-			debugOut( "Xボタン(".. BUTTON_TRIG3 ..") = [".. physicalButton .."]" )
+			--debugOut( "Xボタン(".. BUTTON_TRIG3 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン4をYボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["Y"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG4, physicalButton );
-			debugOut( "Yボタン(".. BUTTON_TRIG4 ..") = [".. physicalButton .."]" )
+			--debugOut( "Yボタン(".. BUTTON_TRIG4 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン5をLボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["L"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG5, physicalButton );
-			debugOut( "Lボタン(".. BUTTON_TRIG5 ..") = [".. physicalButton .."]" )
+			--debugOut( "Lボタン(".. BUTTON_TRIG5 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン6をRボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["R"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG6, physicalButton );
-			debugOut( "Rボタン(".. BUTTON_TRIG6 ..") = [".. physicalButton .."]" )
+			--debugOut( "Rボタン(".. BUTTON_TRIG6 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン7をSボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["S"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG7, physicalButton );
-			debugOut( "Sボタン(".. BUTTON_TRIG7 ..") = [".. physicalButton .."]" )
+			--debugOut( "Sボタン(".. BUTTON_TRIG7 ..") = [".. physicalButton .."]" )
 		end
 
 		--論理ボタン8をPボタンと呼ぶとします。
 		physicalButton = tonumber( hitsRecord["P"])
 		if( nil~=physicalButton and 0<=physicalButton )then
 			setJoyBind( 0, BUTTON_TRIG8, physicalButton );
-			debugOut( "Pボタン(".. BUTTON_TRIG8 ..") = [".. physicalButton .."]" )
+			--debugOut( "Pボタン(".. BUTTON_TRIG8 ..") = [".. physicalButton .."]" )
 		end
 
 	else
