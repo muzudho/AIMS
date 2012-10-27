@@ -548,15 +548,11 @@ _TRIG = {
 		{ BUTTON_TRIG2,	"trig2"	};
 		{ BUTTON_TRIG3,	"trig3"	};
 -- Åyâ¸ïœÅzí«â¡ÅBÇ±Ç±Ç©ÇÁÅB
-		{ BUTTON_TRIG4,	"trig4"	};
-		{ BUTTON_TRIG5,	"trig5"	};
-		{ BUTTON_TRIG6,	"trig6"	};
-		{ BUTTON_TRIG7,	"trig7"	};
-		{ BUTTON_TRIG8,	"trig8"	};
-		{ BUTTON_TRIG9,	"trig9"	};
-		{ BUTTON_TRIG10,	"trig10"	};
-		{ BUTTON_TRIG11,	"trig11"	};
-		{ BUTTON_TRIG12,	"trig12"	};
+		{ BUTTON_TRIG4,	"trig4"	}; --Y
+		{ BUTTON_TRIG5,	"trig5"	}; --L
+		{ BUTTON_TRIG6,	"trig6"	}; --R
+		{ BUTTON_TRIG7,	"trig7"	}; --S
+		{ BUTTON_TRIG8,	"trig8"	}; --P
 -- Åy/â¸ïœÅzí«â¡ÅBÇ±Ç±Ç‹Ç≈ÅB
 }
 function getTrigID(PadID)
