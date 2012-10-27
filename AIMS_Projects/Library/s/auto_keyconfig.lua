@@ -95,7 +95,7 @@
 
 		NO,Expl,PLAYER,A,B,X,Y,L,R,S,P,END
 		int,string,int,int,int,int,int,int,int,int,int,END
-		-1,解説,プレイヤー番号1～,Aボタン番号,Bボタン番号,Xボタン番号,Yボタン番号,Lボタン番号,Rボタン番号,Selectボタン番号,Pauseボタン番号,END
+		-1,解説,プレイヤー番号1～,Aボタン物理番号,Bボタン物理番号,Xボタン物理番号,Yボタン物理番号,Lボタン物理番号,Rボタン物理番号,Selectボタン物理番号,Pauseボタン物理番号,END
 		-1,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,,,,,,,,END
 		0,"1プレイヤー",1,0,1,2,3,4,5,6,7,END
 		EOF
@@ -239,7 +239,7 @@ function auto_KeyconfigWrite()
 
 	out:write( "NO,Expl,PLAYER,A,B,X,Y,L,R,S,P,END\n" )
 	out:write( "int,string,int,int,int,int,int,int,int,int,int,END\n" )
-	out:write( "-1,解説,プレイヤー番号1～,Aボタン番号,Bボタン番号,Xボタン番号,Yボタン番号,Lボタン番号,Rボタン番号,Selectボタン番号,Pauseボタン番号,END\n" )
+	out:write( "-1,解説,プレイヤー番号1～,Aボタン物理番号,Bボタン物理番号,Xボタン物理番号,Yボタン物理番号,Lボタン物理番号,Rボタン物理番号,Selectボタン物理番号,Pauseボタン物理番号,END\n" )
 	out:write( "-1,\"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）\",,,,,,,,,,END\n" )
 	out:write( "0,\"1プレイヤー\",1,".. KEYCONFIG_physicalButtons[1] ..",".. KEYCONFIG_physicalButtons[2] ..",".. KEYCONFIG_physicalButtons[3] ..",".. KEYCONFIG_physicalButtons[4] ..",".. KEYCONFIG_physicalButtons[5] ..",".. KEYCONFIG_physicalButtons[6] ..",".. KEYCONFIG_physicalButtons[7] ..",".. KEYCONFIG_physicalButtons[8] ..",END\n" )
 	out:write( "EOF" )
