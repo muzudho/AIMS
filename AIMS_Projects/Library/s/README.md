@@ -8,6 +8,8 @@ auto_keyconfig.lua …「キーコンフィグ」
 
 auto_music.lua …「ＢＧＭの一元管理」
 
+auto_soundeffects.lua …「SE（効果音）の一元管理」
+
 auto_sceneChanges.lua …「シーン切替の一元管理」
 
 ライブラリーのライセンスについては、一番上の階層の README.md を見て下さい。ライブラリーの使い方は、それぞれのファイル内か、または How_to_use(～).txt に書かれてあります。

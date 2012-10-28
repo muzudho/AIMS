@@ -1,0 +1,14 @@
+NO,Expl,VARIABLE,FILE,END
+int,string,string,string,END
+-1,解説,.luaで使うときの効果音ハンドルを持つ変数,.exeからのファイルパス。,END
+-1,"Sorry, Encoding of this csv file is Shift-JIS.（このCSVファイルはShift-JISエンコーディングです。）",,,END
+0,プレイヤーショット音,S.pshot,se/pshot.wav,END
+1,プレイヤースペル音,S.pspell,se/pspell.wav,END
+2,プレイヤー散華音,S.pdead,se/pdead.wav,END
+3,被弾音,S.shothit,se/shothit.wav,END
+4,レーザー音,S.laser,se/laser.wav,END
+5,ザコ散華音,S.zakodead,se/zakodead.wav,END
+6,ボス散華音,S.bossdead,se/bossdead.wav,END
+7,ボス出現音,S.bossshow,se/bossshow.wav,END
+8,エクステンド音,S.extend,se/extend.wav,END
+EOF,,,,

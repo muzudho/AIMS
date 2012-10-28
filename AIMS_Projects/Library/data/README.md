@@ -2,9 +2,12 @@
 
 auto_music.csv …ＢＧＭ再生の一元管理。
 
+auto_soundeffects.csv …SE（効果音）ファイルの一元管理。
+
 auto_sceneChanges.csv …シーン遷移の、ほぼ一元管理。
 
 enemyAppear.csv …『suica32』風の敵出現の、ほぼ一元管理。
+
 
 使い方の説明は How_to_use(～).txtファイルが同じ階層にありましたら、そちらに書いています。ライブラリーのライセンスについては、一番上の階層の README.md を見て下さい。
 
